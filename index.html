@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppointmentHost</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #1976d2, #2196f3);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #1565c0;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .service {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+    .service h3 {
+      color: #1976d2;
+    }
+    .cta {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .cta p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .cta a {
+      background: #43a047;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 0 10px;
+      display: inline-block;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AppointmentHost</h1>
+    <p>Your trusted assistant for car appointments and services</p>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+  </nav>
+
+  <section id="services">
+    <h2 style="text-align:center; color:#1976d2">Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3><i class="fas fa-calendar-check"></i> Free Car Appointment</h3>
+        <p>Book appointment for your car in any nearby dealership or showroom.</p>
+      </div>
+      <div class="service">
+        <h3><i class="fas fa-car"></i> Discounted Car Wash</h3>
+        <p>Get discounts in any nearby car wash center for 2 years — even at half price.</p>
+      </div>
+      <div class="service">
+        <h3><i class="fas fa-tools"></i> Parts & Repairs</h3>
+        <p>For maintenance and repairs, buy spare parts and get servicing always at less than market price.</p>
+      </div>
+      <div class="service">
+        <h3><i class="fas fa-exchange-alt"></i> Resale Support</h3>
+        <p>In future, if you want to resell a car bought through us, we will find the best deal for you without charging any commission.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <p><strong>Submit the form or WhatsApp us to book your appointment</strong></p>
+    <a href="https://wa.me/917304466212" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="#contact"><i class="fas fa-phone"></i> Submit Form</a>
+  </div>
+
+  <section id="contact">
+    <h2 style="text-align:center; color:#1976d2">Book an Appointment</h2>
+    <form action="https://formsubmit.co/appointmenthost@gmail.com" method="POST" style="max-width:600px;margin:auto">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin:10px 0">
+      <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:10px;margin:10px 0">
+      <input type="text" name="phone" placeholder="Phone Number" required style="width:100%;padding:10px;margin:10px 0">
+      <input type="text" name="location" placeholder="City or Area for Appointment" style="width:100%;padding:10px;margin:10px 0">
+      <textarea name="message" placeholder="Car type, preferred dealership, or message..." style="width:100%;padding:10px;margin:10px 0"></textarea>
+      <button type="submit" style="padding:12px 20px;background:#1976d2;color:white;border:none;border-radius:5px">Submit</button>
+    </form>
+  </section>
+
+  <section id="login">
+    <h2 style="text-align:center; color:#1976d2">Login</h2>
+    <form onsubmit="return showLoginError()" style="max-width:400px;margin:auto">
+      <input type="email" placeholder="Email" required style="width:100%;padding:10px;margin:10px 0">
+      <input type="password" placeholder="Password" required style="width:100%;padding:10px;margin:10px 0">
+      <button type="submit" style="padding:12px 20px;background:#555;color:white;border:none;border-radius:5px">Login</button>
+      <p id="login-error" style="color:red; display:none;">Error: This email is not registered with us.</p>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 AppointmentHost. All rights reserved.
+  </footer>
+
+  <script>
+    function showLoginError() {
+      document.getElementById('login-error').style.display = 'block';
+      return false;
+    }
+  </script>
+</body>
+</html>
